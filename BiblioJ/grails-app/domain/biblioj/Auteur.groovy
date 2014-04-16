@@ -7,4 +7,8 @@ class Auteur {
     
     static constraints = {
     }
+    
+    String toString(){
+	nom + ' ' + prenom
+    }
 }
