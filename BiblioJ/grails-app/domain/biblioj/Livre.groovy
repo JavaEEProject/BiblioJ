@@ -1,14 +1,14 @@
 package biblioj
 
 class Livre {
-	String titre
-	int nombreExemplaires
-	int nombreExemplairesDisponibles
-	
+    String titre
+    int nombreExemplaires
+    int nombreExemplairesDisponibles
+
     static constraints = {
     }
-	
-	String toString(){
-		titre
-	}
+
+    String toString(){
+	titre
+    }
 }
