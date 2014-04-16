@@ -1,0 +1,346 @@
+2014-04-16 17:20:53,359 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:589)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:925)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:388)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:293)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:69)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:454)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:375)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:809)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:535)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:260)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:740)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 22 more
+2014-04-16 17:20:53,372 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:454)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:375)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:809)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:535)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:260)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:740)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:589)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:925)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:388)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:293)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:69)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:20:53,372 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,372 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,372 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:20:53,372 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,501 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,501 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:20:53,502 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,164 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:589)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:925)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:388)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:293)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:69)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:454)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:375)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:809)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:535)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:260)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:740)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 22 more
+2014-04-16 17:27:31,168 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:454)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:375)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:809)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:535)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:260)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:740)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:589)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:925)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:388)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:293)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:69)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:27:31,169 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,169 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,169 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:27:31,169 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,237 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,237 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:27:31,238 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,238 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,238 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:27:31,238 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,239 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
+2014-04-16 17:27:31,239 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-04-16 17:27:31,239 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class biblioj.Auteur] and [class biblioj.Livre] in a many-to-many relationship. Example: static belongsTo = biblioj.Livre
+	... 4 more
