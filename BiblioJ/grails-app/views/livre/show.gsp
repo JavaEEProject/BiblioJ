@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list livre">
 			
-				<g:if test="${livreInstance?.auteurs}">
+				<g:if test="${livreInstance?.titre}">
 				<li class="fieldcontain">
-					<span id="auteurs-label" class="property-label"><g:message code="livre.auteurs.label" default="Auteurs" /></span>
+					<span id="titre-label" class="property-label"><g:message code="livre.titre.label" default="Titre" /></span>
 					
-						<span class="property-value" aria-labelledby="auteurs-label"><g:link controller="auteur" action="show" id="${livreInstance?.auteurs?.id}">${livreInstance?.auteurs?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="titre-label"><g:fieldValue bean="${livreInstance}" field="titre"/></span>
 					
 				</li>
 				</g:if>
@@ -37,6 +37,15 @@
 					<span id="nombreExemplaires-label" class="property-label"><g:message code="livre.nombreExemplaires.label" default="Nombre Exemplaires" /></span>
 					
 						<span class="property-value" aria-labelledby="nombreExemplaires-label"><g:fieldValue bean="${livreInstance}" field="nombreExemplaires"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${livreInstance?.auteurs}">
+				<li class="fieldcontain">
+					<span id="auteurs-label" class="property-label"><g:message code="livre.auteurs.label" default="Auteurs" /></span>
+					
+						<span class="property-value" aria-labelledby="auteurs-label"><g:link controller="auteur" action="show" id="${livreInstance?.auteurs?.id}">${livreInstance?.auteurs?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -55,15 +64,6 @@
 					<span id="reservations-label" class="property-label"><g:message code="livre.reservations.label" default="Reservations" /></span>
 					
 						<span class="property-value" aria-labelledby="reservations-label"><g:link controller="reservation" action="show" id="${livreInstance?.reservations?.id}">${livreInstance?.reservations?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${livreInstance?.titre}">
-				<li class="fieldcontain">
-					<span id="titre-label" class="property-label"><g:message code="livre.titre.label" default="Titre" /></span>
-					
-						<span class="property-value" aria-labelledby="titre-label"><g:fieldValue bean="${livreInstance}" field="titre"/></span>
 					
 				</li>
 				</g:if>

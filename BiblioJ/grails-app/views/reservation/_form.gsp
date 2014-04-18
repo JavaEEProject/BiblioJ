@@ -7,7 +7,7 @@
 		<g:message code="reservation.code.label" default="Code" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="code" type="number" value="${reservationInstance.code}" required=""/>
+	<g:field name="code" type="number" min="0" max="999999" value="${reservationInstance.code}" required=""/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'dateReservation', 'error')} required">

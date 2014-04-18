@@ -2,6 +2,22 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: auteurInstance, field: 'nom', 'error')} required">
+	<label for="nom">
+		<g:message code="auteur.nom.label" default="Nom" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="nom" maxlength="30" required="" value="${auteurInstance?.nom}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: auteurInstance, field: 'prenom', 'error')} required">
+	<label for="prenom">
+		<g:message code="auteur.prenom.label" default="Prenom" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="prenom" maxlength="30" required="" value="${auteurInstance?.prenom}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: auteurInstance, field: 'livres', 'error')} ">
 	<label for="livres">
 		<g:message code="auteur.livres.label" default="Livres" />
@@ -17,21 +33,5 @@
 </li>
 </ul>
 
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: auteurInstance, field: 'nom', 'error')} ">
-	<label for="nom">
-		<g:message code="auteur.nom.label" default="Nom" />
-		
-	</label>
-	<g:textField name="nom" value="${auteurInstance?.nom}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: auteurInstance, field: 'prenom', 'error')} ">
-	<label for="prenom">
-		<g:message code="auteur.prenom.label" default="Prenom" />
-		
-	</label>
-	<g:textField name="prenom" value="${auteurInstance?.prenom}"/>
 </div>
 

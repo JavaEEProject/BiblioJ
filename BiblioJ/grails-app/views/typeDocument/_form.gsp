@@ -2,11 +2,11 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: typeDocumentInstance, field: 'intitule', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: typeDocumentInstance, field: 'intitule', 'error')} required">
 	<label for="intitule">
 		<g:message code="typeDocument.intitule.label" default="Intitule" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="intitule" value="${typeDocumentInstance?.intitule}"/>
+	<g:textField name="intitule" maxlength="50" required="" value="${typeDocumentInstance?.intitule}"/>
 </div>
 

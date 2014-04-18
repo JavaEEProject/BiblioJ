@@ -6,6 +6,8 @@ class Auteur {
 	String prenom;
 
 	static constraints = {
+		nom(size: 2..30, blank:false, nullable:false)
+		prenom(size: 2..30, blank:false, nullable:false)
 	}
 
 	// relation many-to-many

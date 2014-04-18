@@ -9,6 +9,10 @@ class Livre {
 	TypeDocument typeDocument
 	
 	static constraints = {
+		titre(size:2..60, blank:false, nullable:false)
+		nombreExemplaires(min:1, max:9999)
+		// TODO contrainte sur nombreExemplairesDisponibles : doit forcement etre inférieur ou egale à nombreExemplaires
+		//nombreExemplairesDisponibles(min:1, validate : {return (it <= Livre.nombreExemplaires)}
 	}
 	
 	// relation many-to-many

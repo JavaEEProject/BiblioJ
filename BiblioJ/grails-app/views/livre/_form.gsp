@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'auteurs', 'error')} required">
-	<label for="auteurs">
-		<g:message code="livre.auteurs.label" default="Auteurs" />
+<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'titre', 'error')} required">
+	<label for="titre">
+		<g:message code="livre.titre.label" default="Titre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="auteurs" name="auteurs.id" from="${biblioj.Auteur.list()}" optionKey="id" required="" value="${livreInstance?.auteurs?.id}" class="many-to-one"/>
+	<g:textField name="titre" maxlength="60" required="" value="${livreInstance?.titre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'nombreExemplaires', 'error')} required">
@@ -15,7 +15,15 @@
 		<g:message code="livre.nombreExemplaires.label" default="Nombre Exemplaires" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="nombreExemplaires" type="number" value="${livreInstance.nombreExemplaires}" required=""/>
+	<g:field name="nombreExemplaires" type="number" min="1" max="9999" value="${livreInstance.nombreExemplaires}" required=""/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'auteurs', 'error')} required">
+	<label for="auteurs">
+		<g:message code="livre.auteurs.label" default="Auteurs" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="auteurs" name="auteurs.id" from="${biblioj.Auteur.list()}" optionKey="id" required="" value="${livreInstance?.auteurs?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'nombreExemplairesDisponibles', 'error')} required">
@@ -32,14 +40,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="reservations" name="reservations.id" from="${biblioj.Reservation.list()}" optionKey="id" required="" value="${livreInstance?.reservations?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'titre', 'error')} ">
-	<label for="titre">
-		<g:message code="livre.titre.label" default="Titre" />
-		
-	</label>
-	<g:textField name="titre" value="${livreInstance?.titre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'typeDocument', 'error')} required">

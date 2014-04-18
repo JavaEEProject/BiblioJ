@@ -1,4 +1,5 @@
 import biblioj.Auteur
+import biblioj.Livre
 import biblioj.Reservation
 import biblioj.TypeDocument
 
@@ -18,7 +19,10 @@ class BootStrap {
 		// Est requis pour pouvoir simuler la relation many-to-many entre livre et reservation 
 		// dans le cas ou il n'existe pas de reservation, on ne peut pas creer de livre (ce qui est un peu bête)
 		// du coup on déclare une reservation par defaut qui est reconnu à l'affichage par code 0 et qui affiche "aucune"
-		def defaultReservation = new Reservation(code: 0).save()
+		def defaultReservation = new Reservation(code: 0, dateReservation: new Date()).save()
+		
+		// TODO Ne fonctionne pas encore, modifier les relations
+		//def livre = new Livre(titre: "La chute du faucon bleu", nombreExemplaires:11, nombreExemplairesDisponibles: 11, typeDocument: typeDocument1).addAuteur(auteur1).addAuteur(auteur2).addReservation(defaultReservation).save()
 		
     }
     def destroy = {
