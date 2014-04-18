@@ -8,7 +8,7 @@ class Reservation {
 	static constraints = {
 	}
 
-	//static belongsTo = User
+	// relation many-to-many
 	static hasMany = [livres: Livre]
 	
 	String toString(){

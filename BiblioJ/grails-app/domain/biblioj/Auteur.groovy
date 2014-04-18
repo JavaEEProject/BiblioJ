@@ -8,7 +8,8 @@ class Auteur {
 	static constraints = {
 	}
 
-	static hasMany = [auteurLivres: AuteurLivre, livres: Livre]
+	// relation many-to-many
+	static hasMany = [livres: Livre]
 
 	String toString(){
 		nom + ' ' + prenom

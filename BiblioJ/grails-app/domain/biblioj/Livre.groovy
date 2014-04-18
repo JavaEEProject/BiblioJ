@@ -5,10 +5,15 @@ class Livre {
 	int nombreExemplaires
 	int nombreExemplairesDisponibles
 
+	// Relation many-to-one
+	TypeDocument typeDocument
+	
 	static constraints = {
 	}
 	
-	static hasMany = [auteurLivres: AuteurLivre]
+	// relation many-to-many
+	static belongsTo  =   [auteurs: Auteur, reservations: Reservation]
+	static hasMany = [auteurs: Auteur, reservations: Reservation]
 
 	String toString(){
 		titre

@@ -7,7 +7,7 @@ class TypeDocument {
 	static constraints = {
 	}
 
-	static belongsTo = Livre
+	static hasmany = [livres: Livre]
 	
 	String toString(){
 		intitule
