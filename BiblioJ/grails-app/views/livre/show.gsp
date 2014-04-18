@@ -41,20 +41,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${livreInstance?.auteurs}">
-				<li class="fieldcontain">
-					<span id="auteurs-label" class="property-label"><g:message code="livre.auteurs.label" default="Auteurs" /></span>
-					
-						<span class="property-value" aria-labelledby="auteurs-label"><g:link controller="auteur" action="show" id="${livreInstance?.auteurs?.id}">${livreInstance?.auteurs?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${livreInstance?.nombreExemplairesDisponibles}">
 				<li class="fieldcontain">
 					<span id="nombreExemplairesDisponibles-label" class="property-label"><g:message code="livre.nombreExemplairesDisponibles.label" default="Nombre Exemplaires Disponibles" /></span>
 					
 						<span class="property-value" aria-labelledby="nombreExemplairesDisponibles-label"><g:fieldValue bean="${livreInstance}" field="nombreExemplairesDisponibles"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${livreInstance?.auteurs}">
+				<li class="fieldcontain">
+					<span id="auteurs-label" class="property-label"><g:message code="livre.auteurs.label" default="Auteurs" /></span>
+					
+						<span class="property-value" aria-labelledby="auteurs-label"><g:link controller="auteur" action="show" id="${livreInstance?.auteurs?.id}">${livreInstance?.auteurs?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

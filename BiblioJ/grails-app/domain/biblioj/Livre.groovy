@@ -11,12 +11,12 @@ class Livre {
 	static constraints = {
 		titre(size:2..60, blank:false, nullable:false)
 		nombreExemplaires(min:1, max:9999)
-		// TODO contrainte sur nombreExemplairesDisponibles : doit forcement etre inférieur ou egale à nombreExemplaires
-		//nombreExemplairesDisponibles(min:1, validate : {return (it <= Livre.nombreExemplaires)}
+		//nombreExemplairesDisponibles validator: {val, obj -> if(obj.nombreExemplaires < val) ['error']}
+		nombreExemplairesDisponibles validator: {val, obj -> obj.nombreExemplaires >= val}
 	}
 	
 	// relation many-to-many
-	static belongsTo  =   [auteurs: Auteur, reservations: Reservation]
+	static belongsTo  = [auteurs: Auteur, reservations: Reservation]
 	static hasMany = [auteurs: Auteur, reservations: Reservation]
 
 	String toString(){

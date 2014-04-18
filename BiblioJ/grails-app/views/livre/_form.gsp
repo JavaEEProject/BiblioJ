@@ -18,20 +18,20 @@
 	<g:field name="nombreExemplaires" type="number" min="1" max="9999" value="${livreInstance.nombreExemplaires}" required=""/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'auteurs', 'error')} required">
-	<label for="auteurs">
-		<g:message code="livre.auteurs.label" default="Auteurs" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="auteurs" name="auteurs.id" from="${biblioj.Auteur.list()}" optionKey="id" required="" value="${livreInstance?.auteurs?.id}" class="many-to-one"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'nombreExemplairesDisponibles', 'error')} required">
 	<label for="nombreExemplairesDisponibles">
 		<g:message code="livre.nombreExemplairesDisponibles.label" default="Nombre Exemplaires Disponibles" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="nombreExemplairesDisponibles" type="number" value="${livreInstance.nombreExemplairesDisponibles}" required=""/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'auteurs', 'error')} required">
+	<label for="auteurs">
+		<g:message code="livre.auteurs.label" default="Auteurs" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="auteurs" name="auteurs.id" from="${biblioj.Auteur.list()}" optionKey="id" required="" value="${livreInstance?.auteurs?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'reservations', 'error')} required">
