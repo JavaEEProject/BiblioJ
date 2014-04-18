@@ -30,10 +30,6 @@
 					
 						<g:sortableColumn property="nombreExemplairesDisponibles" title="${message(code: 'livre.nombreExemplairesDisponibles.label', default: 'Nombre Exemplaires Disponibles')}" />
 					
-						<th><g:message code="livre.auteurs.label" default="Auteurs" /></th>
-					
-						<th><g:message code="livre.reservations.label" default="Reservations" /></th>
-					
 						<th><g:message code="livre.typeDocument.label" default="Type Document" /></th>
 					
 					</tr>
@@ -47,10 +43,6 @@
 						<td>${fieldValue(bean: livreInstance, field: "nombreExemplaires")}</td>
 					
 						<td>${fieldValue(bean: livreInstance, field: "nombreExemplairesDisponibles")}</td>
-					
-						<td>${fieldValue(bean: livreInstance, field: "auteurs")}</td>
-					
-						<td>${fieldValue(bean: livreInstance, field: "reservations")}</td>
 					
 						<td>${fieldValue(bean: livreInstance, field: "typeDocument")}</td>
 					

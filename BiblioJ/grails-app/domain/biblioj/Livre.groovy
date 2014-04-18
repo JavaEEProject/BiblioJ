@@ -4,7 +4,9 @@ class Livre {
 	String titre
 	int nombreExemplaires
 	int nombreExemplairesDisponibles
-
+	// relation many-to-many
+	static hasMany = [auteurs: Auteur, reservations: Reservation]
+	static belongsTo = [Auteur]
 	// Relation many-to-one
 	TypeDocument typeDocument
 	
@@ -15,10 +17,6 @@ class Livre {
 		nombreExemplairesDisponibles validator: {val, obj -> obj.nombreExemplaires >= val}
 	}
 	
-	// relation many-to-many
-	static belongsTo  = [auteurs: Auteur, reservations: Reservation]
-	static hasMany = [auteurs: Auteur, reservations: Reservation]
-
 	String toString(){
 		titre
 	}

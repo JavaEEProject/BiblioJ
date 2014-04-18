@@ -2,14 +2,14 @@ package biblioj
 
 class TypeDocument {
 
-	String intitule;
+	String intitule
+	//Relation one-to-many
+	static hasmany = [livres: Livre]
 
 	static constraints = {
 		intitule(size:2..50, blank:false, nullable:false)
 	}
 
-	static hasmany = [livres: Livre]
-	
 	String toString(){
 		intitule
 	}

@@ -54,7 +54,9 @@
 				<li class="fieldcontain">
 					<span id="auteurs-label" class="property-label"><g:message code="livre.auteurs.label" default="Auteurs" /></span>
 					
-						<span class="property-value" aria-labelledby="auteurs-label"><g:link controller="auteur" action="show" id="${livreInstance?.auteurs?.id}">${livreInstance?.auteurs?.encodeAsHTML()}</g:link></span>
+						<g:each in="${livreInstance.auteurs}" var="a">
+						<span class="property-value" aria-labelledby="auteurs-label"><g:link controller="auteur" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
@@ -63,7 +65,9 @@
 				<li class="fieldcontain">
 					<span id="reservations-label" class="property-label"><g:message code="livre.reservations.label" default="Reservations" /></span>
 					
-						<span class="property-value" aria-labelledby="reservations-label"><g:link controller="reservation" action="show" id="${livreInstance?.reservations?.id}">${livreInstance?.reservations?.encodeAsHTML()}</g:link></span>
+						<g:each in="${livreInstance.reservations}" var="r">
+						<span class="property-value" aria-labelledby="reservations-label"><g:link controller="reservation" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

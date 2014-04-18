@@ -24,14 +24,5 @@
 		
 	</label>
 	
-<ul class="one-to-many">
-<g:each in="${reservationInstance?.livres?}" var="l">
-    <li><g:link controller="livre" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="livre" action="create" params="['reservation.id': reservationInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'livre.label', default: 'Livre')])}</g:link>
-</li>
-</ul>
-
 </div>
 
