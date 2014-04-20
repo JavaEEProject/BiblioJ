@@ -5,14 +5,13 @@ class Auteur {
 	String nom
 	String prenom
 	// relation many-to-many
-	static hasMany = [livres: Livre]
+	static hasMany = [livresEcrit: Livre]
 	
 	static constraints = {
-		nom(size: 2..30, blank:false, nullable:false)
-		prenom(size: 2..30, blank:false, nullable:false)
+		nom(size: 1..30, blank:false, nullable:false)
+		prenom(size: 1..30, blank:false, nullable:false)
 	}
 
-	
 
 	String toString(){
 		nom + ' ' + prenom

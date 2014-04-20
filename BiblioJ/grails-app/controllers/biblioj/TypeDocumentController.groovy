@@ -4,6 +4,9 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class TypeDocumentController {
 
+	// n'est pas voué à exister, à moins que l'on laisse le droit à l'utilisateur 
+	// de rajouter de lui même des types de document
+	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {

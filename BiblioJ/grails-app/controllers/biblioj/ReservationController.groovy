@@ -3,6 +3,14 @@ package biblioj
 import org.springframework.dao.DataIntegrityViolationException
 
 class ReservationController {
+	
+	// il n'y aura ici un espace de recherche de reservation via l'id de la reservation du client
+	// il entrera son id de reservation et pourra la consulter si elle existe
+	
+	// Après la redirection de la view livre controller par LivreController 
+	// il pourra ajouter à sa reservation le livre qu'il avait choisis.
+	// si il possède déjà un reservation, il précise son id de reservation dans un champs prévu pour
+	// sinon, une nouvelle reservation est créé au moment de valider sa reservation
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 

@@ -7,7 +7,7 @@
 		<g:message code="livre.titre.label" default="Titre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="titre" maxlength="60" required="" value="${livreInstance?.titre}"/>
+	<g:textArea name="titre" cols="40" rows="5" maxlength="300" required="" value="${livreInstance?.titre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'nombreExemplaires', 'error')} required">
@@ -26,9 +26,9 @@
 	<g:field name="nombreExemplairesDisponibles" type="number" value="${livreInstance.nombreExemplairesDisponibles}" required=""/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'auteurs', 'error')} ">
-	<label for="auteurs">
-		<g:message code="livre.auteurs.label" default="Auteurs" />
+<div class="fieldcontain ${hasErrors(bean: livreInstance, field: 'mesAuteurs', 'error')} ">
+	<label for="mesAuteurs">
+		<g:message code="livre.mesAuteurs.label" default="Mes Auteurs" />
 		
 	</label>
 	

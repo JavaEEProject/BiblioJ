@@ -1,4 +1,4 @@
-if (typeof jQuery !== 'undefined') {
+﻿if (typeof jQuery !== 'undefined') {
 	(function($) {
 		$('#spinner').ajaxStart(function() {
 			$(this).fadeIn();

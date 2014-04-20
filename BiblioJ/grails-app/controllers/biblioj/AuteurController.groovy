@@ -4,6 +4,9 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class AuteurController {
 
+	// idem que le controller typeDocument, ce controller n'a pas vocation à exister.
+	// à moins que l'on autorise l'utilisateur à ajouter des auteurs dans la base de données
+	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {

@@ -3,6 +3,9 @@ package biblioj
 import org.springframework.dao.DataIntegrityViolationException
 
 class LivreController {
+	
+	// ici l'utilisateur pourra rechercher des livres et sera redirigé vers une page de reservation s'il clique dessu
+	// entre autre vers la view Reservation qui sera géré par ReservationController
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -10,6 +13,14 @@ class LivreController {
         redirect(action: "list", params: params)
     }
 
+	def search() {
+		//TODO bouton qui appelle après que l'utilisateur 
+		// ait rempli les champs adéquat (à éditer dans la view list.gsp ou creer une nouvelle vue)
+		// les méthodes de recherche déclaré dans les services sous le nom de RechercheLivre.groovy
+		// rappel : le controleur ne fait aucun traitement sur les données, 
+		// il gère juste l'actualisation de l'affichage (le render)
+	}
+	
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [livreInstanceList: Livre.list(params), livreInstanceTotal: Livre.count()]
