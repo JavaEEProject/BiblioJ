@@ -2,19 +2,41 @@ package biblioj
 
 class RechercheLivreService {
 
-	def getByTitre(String titre) {
-		def result = Livre.findAllByTitreLike(titre)
-		return result
-	}
+	def rechercheLivre(Map params, Reservation reservation) {
+		def titreRecherche  = params.champRechercheLivreParTitre
+		def auteurRecherche = params.champRechercheLivreParAuteur
+		def typeDocumentRecherche = params.champRechercheLivreParTypeDocument
 
-	def getByNom(String nom) {
-		def result = Auteur.findAllByNomLike(nom)
-		return result
-	}
+		int offsetResultat = Integer.valueOf(params.offset)
+		if (!params.offset) {
+			offsetResultat = 0  // 5
+		}
 
-	def getByType(String t) {
-		def l = TypeDocument.findByIntitule(t)
-		def result = Livre.findAllByTypeDocument(l)
-		return result
+		int maxResultat = Integer.valueOf(params.max)
+		if (!params.max) {
+			maxResultat = 0 // 5
+		}
+
+		def criteria = Livre.createCriteria()
+		def livres = criteria.list(offset: offsetResultat, max: maxResultat) {
+			if(titreRecherche) {
+				ilike("titre", '%' + titreRecherche + '%')
+			}
+
+			if(auteurRecherche) {
+				mesAuteurs {
+					or {
+						ilike("nom", '%' + auteurRecherche + '%')
+						ilike("prenom", '%' + auteurRecherche + '%')
+					}
+				}
+			}
+
+			if(typeDocumentRecherche) {
+				createAlias ("type", "typeDoc")
+				ilike("typeDocument.intitule", "%$typeRecherche")
+			}
+		}
+		[listLivre: livres, nbLivre: livres.totalCount, reservation : reservation]
 	}
 }
