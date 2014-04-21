@@ -12,7 +12,44 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+			<ul>
+				<li class="fieldcontain">
+					<label for="champRechercheLivreParTitre"> Titre</label>
+					<g:textField name="champRechercheLivreParTitre" value="" />
+				</li>
+				
+				<li class="fieldcontain">
+					<label for="champRecherchLivreParAuteur"> Auteur </label>
+					<g:textField name="champRechercheLivreParAuteur" value="" />
+				</li>
+				
+				<li class="fieldcontain">
+					<label for="champRechercheLivreParTypeDocument"> Type </label>
+					<g:select id="type" name="champRechercheLivreParTypeDocument" 
+						from="${biblioj.TypeDocument.list()}" oSelection="['':'- Choisir un type -']" />
+				</li>
+				<li>
+					<g:link class="buttons" style="text-decoration: none; color: black" 
+						controller="livre" action="list" id="${livreInstance?.id}">
+						Rechercher livres
+					</g:link>
+				</li>
+			</ul>
+			<ul>
+				<li class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'dateReservation', 'error')} required">
+					<label for="dateReservation">
+						<g:message code="reservation.dateReservation.label" default="Date Reservation" />
+						<span class="required-indicator">*</span>
+					</label>
+					<g:datePicker name="dateReservation" precision="day"  value="${reservationInstance?.dateReservation}"  />
+				</li>
+				<li>
+					<g:link class="buttons" style="text-decoration: none; color: black" 
+						controller="reservation" action="saveLivre" id="${reservationInstance?.id}">
+						Sauvegarder la reservation
+					</g:link>
+				</li>
 			</ul>
 		</div>
 		<div id="list-livre" class="content scaffold-list" role="main">
@@ -23,15 +60,11 @@
 			<table>
 				<thead>
 					<tr>
-					
 						<g:sortableColumn property="titre" title="${message(code: 'livre.titre.label', default: 'Titre')}" />
-					
 						<g:sortableColumn property="nombreExemplaires" title="${message(code: 'livre.nombreExemplaires.label', default: 'Nombre Exemplaires')}" />
-					
 						<g:sortableColumn property="nombreExemplairesDisponibles" title="${message(code: 'livre.nombreExemplairesDisponibles.label', default: 'Nombre Exemplaires Disponibles')}" />
-					
 						<th><g:message code="livre.typeDocument.label" default="Type Document" /></th>
-					
+						<th>Réservation</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,19 +72,27 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${livreInstance.id}">${fieldValue(bean: livreInstance, field: "titre")}</g:link></td>
-					
 						<td>${fieldValue(bean: livreInstance, field: "nombreExemplaires")}</td>
-					
 						<td>${fieldValue(bean: livreInstance, field: "nombreExemplairesDisponibles")}</td>
-					
 						<td>${fieldValue(bean: livreInstance, field: "typeDocument")}</td>
+						<td>
+							<g:if test="${session['user'].find { it.id == livreInstance.id }}">Déjà ajouté</g:if>
+							<g:else>
+								<g:if test="${livreInstance.nombreExemplairesDisponibles > 0}">
+									<g:link class="buttons" style="text-decoration: none; color: black" controller="reservation" action="addLivre" id="${livreInstance?.id}">Ajouter</g:link>
+								</g:if>
+								<g:else><p>Rupture de stock</p></g:else>
+							</g:else>
+						</td>
 					
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
 			<div class="pagination">
-				<g:paginate total="${livreInstanceTotal}" />
+				<tr>
+					<td><g:paginate total="${livreInstanceTotal}" /></td>
+				</tr>
 			</div>
 		</div>
 	</body>

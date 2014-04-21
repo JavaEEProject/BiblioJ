@@ -86,17 +86,17 @@
 		<p>Consultation d'une partie des collections numérisées de la Bibliothèque nationale de France.</p>
 		<div id="status" style="float:left" role="complementary">
 			<g:link class="controller" controller="livre" action="index">
-				<img src="${resource(dir: 'images', file: 'logo-livre.png')}" alt="Liens vers la page Livre" style="width:180px; height:180px;" />
+				<img src="${resource(dir: 'images', file: 'logo-livre.png')}" alt="Lien vers la page Livre" style="width:180px; height:180px;" />
 			</g:link>
 		</div>
 		<div id="status" style="float:right" role="complementary">
 			<g:link class="controller" controller="auteur" action="index">
-				<img src="${resource(dir: 'images', file: 'logo-auteur.png')}" alt="Liens vers la page Auteur" style="width:180px; height:180px;" />
+				<img src="${resource(dir: 'images', file: 'logo-auteur.png')}" alt="Lien vers la page Auteur" style="width:180px; height:180px;" />
 			</g:link>
 		</div>
 		<div id="status" style="float:both" role="complementary">
-			<g:link class="controller" controller="panier" action="index">
-				<img src="${resource(dir: 'images', file: 'logo-panier.png')}" alt="Liens vers la page Panier" style="width:180px; height:180px;" />
+			<g:link class="controller" controller="reservation" action="index">
+				<img src="${resource(dir: 'images', file: 'logo-panier.png')}" alt="Lien vers la page Reservation" style="width:180px; height:180px;" />
 			</g:link>
 		</div>
 	</body>
