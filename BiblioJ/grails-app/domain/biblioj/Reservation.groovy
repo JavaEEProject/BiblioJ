@@ -6,7 +6,7 @@ class Reservation {
     Date dateReservation = new Date()
     // relation many-to-many
     static hasMany = [livres: Livre]
-    static belongsTo = [Livre]
+    static fetchMode = [livres: 'eager']
     
     static constraints = {
 		code (min:0, max:999999, unique:true)

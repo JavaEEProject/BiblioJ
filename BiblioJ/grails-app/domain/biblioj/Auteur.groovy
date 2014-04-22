@@ -6,6 +6,8 @@ class Auteur {
 	String prenom
 	// relation many-to-many
 	static hasMany = [livresEcrit: Livre]
+	static fetchMode = [livresEcrit: 'eager']
+	static belongsTo = Livre
 	
 	static constraints = {
 		nom(size: 1..30, blank:false, nullable:false)

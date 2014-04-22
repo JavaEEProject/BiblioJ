@@ -13,7 +13,10 @@ class ReservationController {
 	// sinon, une nouvelle reservation est cr�� au moment de valider sa reservation
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	static int codeReservation = 0
+	def nextCodeReservation(){
+		codeReservation++
+	}
 	def index() {
 		redirect(action: "list", params: params)
 	}
@@ -24,8 +27,25 @@ class ReservationController {
 	}
 
 	def create() {
-		session["user"] = []
-		[reservationInstance: new Reservation(params)]
+		Reservation reservationI = new Reservation(code: nextCodeReservation(), dateReservation: params?.dateReservation)
+		if(session['user'].size() > 0){
+			println session['user']
+			session['msgErreur'] = false
+			
+			List<Livre> livres = session['user']		
+			livres.each{
+				if(it.nombreExemplairesDisponibles > 0 ) {
+					it.nombreExemplairesDisponibles --
+					reservationI.addToLivres(Livre.findWhere(titre: it.titre))
+				} else {
+					// on affiche un message d'erreur, tout n'a pas pu etre reserve
+					session['msgErreur'] = true
+				}	
+			}
+		}
+
+		[reservationInstance: reservationI]
+			
 	}
 
 	def save() {

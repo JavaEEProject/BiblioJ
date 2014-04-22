@@ -6,7 +6,8 @@ class Livre {
 	int nombreExemplairesDisponibles
 	// relation many-to-many
 	static hasMany = [mesAuteurs: Auteur, reservations: Reservation]
-	static belongsTo = [Auteur]
+	static belongsTo = Reservation
+	static fetchMode = [mesAuteurs : 'eager']
 	// Relation many-to-one
 	TypeDocument typeDocument
 	

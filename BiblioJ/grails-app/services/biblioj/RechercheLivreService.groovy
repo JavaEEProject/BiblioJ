@@ -37,8 +37,6 @@ class RechercheLivreService {
 				ilike("typeDoc.intitule", "%$typeDocumentRecherche")
 			}
 		}
-		println "livres =" + livres
-		println "nombre de livres =" + livres.totalCount
 		[livreInstanceList: livres, livreInstanceTotal: livres.totalCount]
 	}
 }

@@ -40,15 +40,8 @@
 			</fieldset>
 		</g:form>
 		<g:form controller="reservation">
-			<span>
-				<label for="dateReservation"> 
-					<g:message code="reservation.dateReservation.label" default="Date reservation" />
-					<span class="required-indicator">*</span>
-				</label> 
-				<g:datePicker name="dateReservation" precision="day" value="${reservationInstance?.dateReservation}" />
-			</span>
 			<fieldset class="buttons">
-				<g:actionSubmit class="formulaireBoutonSubmit" action=" " value="Reserver" />
+				<g:actionSubmit class="formulaireBoutonSubmit" action="create" value="Reserver" />
 			</fieldset>
 		</g:form>
 	</div>
