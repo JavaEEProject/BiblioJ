@@ -8,7 +8,7 @@ import liquibase.util.csv.opencsv.CSVReader
 class BootStrap {
 
 	def init = { servletContext ->
-
+		println "yoy"
 		ChargementDonneesDepuisCSV parser = new ChargementDonneesDepuisCSV()
 		parser.loadCSVToBD("corpus.csv")
 

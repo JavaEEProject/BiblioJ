@@ -7,8 +7,16 @@ class RechercheLivreService {
 		def auteurRecherche = params.champRechercheLivreParAuteur
 		def typeDocumentRecherche = params.champRechercheLivreParTypeDocument
 
-		def offsetResultat = 5
-		def maxResultat = 5
+		int offsetResultat = 0
+		int maxResultat = 0
+		
+		if (params.offset) {
+			offsetResultat = Integer.valueOf(params.offset)
+		}
+		if (params.max) {
+			maxResultat = Integer.valueOf(params.max)
+		}
+		
 		def criteria = Livre.createCriteria()
 		def livres = criteria.list(offset: offsetResultat, max: maxResultat) {
 			if(titreRecherche) {
@@ -25,10 +33,12 @@ class RechercheLivreService {
 			}
 
 			if(typeDocumentRecherche) {
-				createAlias ("type", "typeDoc")
-				ilike("typeDocument.intitule", "%$typeRecherche")
+				createAlias ("typeDocument", "typeDoc")
+				ilike("typeDoc.intitule", "%$typeDocumentRecherche")
 			}
 		}
-		[listLivre: livres, nbLivre: livres.totalCount]
+		println "livres =" + livres
+		println "nombre de livres =" + livres.totalCount
+		[livreInstanceList: livres, livreInstanceTotal: livres.totalCount]
 	}
 }

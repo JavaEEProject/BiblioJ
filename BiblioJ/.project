@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BiblioJ</name>
+	<name>Biblioj</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<locationURI>GRAILS_ROOT/2.2.4/projects/BiblioJ/plugins</locationURI>
+			<locationURI>GRAILS_ROOT/2.2.4/projects/biblioj/plugins</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

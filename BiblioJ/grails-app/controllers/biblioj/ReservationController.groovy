@@ -25,7 +25,6 @@ class ReservationController {
 
 	def create() {
 		session["user"] = []
-		session['code'] = nextCode()
 		[reservationInstance: new Reservation(params)]
 	}
 
