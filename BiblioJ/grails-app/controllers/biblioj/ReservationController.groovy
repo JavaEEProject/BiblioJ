@@ -138,7 +138,6 @@ class ReservationController {
 		Livre livreInstance = Livre.get(id)
 
 		if(!session['user']){
-			create()
 			session['user'] = []
 		}
 		session['user'] << livreInstance
@@ -149,10 +148,12 @@ class ReservationController {
 		int index = id
 		def livreInstanceList = session['user']
 		Livre livreInstance = livreInstanceList[index]
-
-		if(session['user'].size() > 1) session['user'].remove(index)
+		println "index" +  index
+		println "size = " + session['user'].size()
+		
+		if(session['user'].size() > 1) session['user'].remove(index-1)
 		else session.removeAttribute('user')
-		redirect(action: "list")
+		redirect(action: "list", controller : "livre")
 	}
 
 	
@@ -168,6 +169,5 @@ class ReservationController {
 			reservationInstance.id
 		])
 		redirect(action: "show", id: reservationInstance.id)
-		// TODO
 	}
 }

@@ -33,30 +33,24 @@
 					name="champRechercheLivreParTypeDocument"
 					from="${biblioj.TypeDocument.list()}"
 					value="${params?.champRechercheLivreParTypeDocument}"
-					noSelection="['':'- Choose a type -']" />
+					noSelection="['':'Type document']" />
 			</span>
 			<fieldset class="buttons">
-				<g:actionSubmit class="formulaireBoutonSubmit" action="list"
-					value="Submit" />
+				<g:actionSubmit class="formulaireBoutonSubmit" action="list" value="Rechercher" />
 			</fieldset>
 		</g:form>
-
-		<ul>
-			<li
-				class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'dateReservation', 'error')} required">
-				<label for="dateReservation"> <g:message
-						code="reservation.dateReservation.label"
-						default="Date Reservation" /> <span class="required-indicator">*</span>
-			</label> <g:datePicker name="dateReservation" precision="day"
-					value="${reservationInstance?.dateReservation}" />
-			</li>
-			<li><g:link class="buttons"
-					style="text-decoration: none; color: black"
-					controller="reservation" action="saveLivre"
-					id="${reservationInstance?.id}">
-						Sauvegarder la reservation
-					</g:link></li>
-		</ul>
+		<g:form controller="reservation">
+			<span>
+				<label for="dateReservation"> 
+					<g:message code="reservation.dateReservation.label" default="Date reservation" />
+					<span class="required-indicator">*</span>
+				</label> 
+				<g:datePicker name="dateReservation" precision="day" value="${reservationInstance?.dateReservation}" />
+			</span>
+			<fieldset class="buttons">
+				<g:actionSubmit class="formulaireBoutonSubmit" action=" " value="Reserver" />
+			</fieldset>
+		</g:form>
 	</div>
 	<div id="list-livre" class="content scaffold-list" role="main">
 		<h1>
@@ -101,20 +95,18 @@
 									</g:link>
 								</span>
 							</g:each></td>
-						<td><g:if
-								test="${session['user'].find { it.id == livreInstance.id }}">Déjà ajouté</g:if>
+						<td><g:if test="${session['user'].find { it.id == livreInstance.id }}">
+							<g:link class="buttons" style="text-decoration: none; color: black" controller="reservation" action="removeLivre" id="${livreInstance?.id}" >Supprimer</g:link>
+						</g:if>
 							<g:else>
 								<g:if test="${livreInstance.nombreExemplairesDisponibles > 0}">
-									<g:link class="buttons"
-										style="text-decoration: none; color: black"
-										controller="reservation" action="addLivre"
-										id="${livreInstance?.id}">Ajouter</g:link>
+									<g:link class="buttons" style="text-decoration: none; color: black" controller="reservation" action="addLivre" id="${livreInstance?.id}">Ajouter</g:link>
 								</g:if>
 								<g:else>
 									<p>Rupture de stock</p>
 								</g:else>
-							</g:else></td>
-
+							</g:else>
+						</td>
 					</tr>
 				</g:each>
 			</tbody>
