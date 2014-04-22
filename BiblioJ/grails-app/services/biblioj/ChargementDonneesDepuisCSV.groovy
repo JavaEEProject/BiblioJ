@@ -65,7 +65,6 @@ class ChargementDonneesDepuisCSV {
 				try{
 					livreTmp.addToMesAuteurs(Auteur.findWhere(nom : nom, prenom: prenom))
 					auteurTmp.addToLivresEcrit(Livre.findWhere(titre: titreStr, typeDocument: TypeDocument.findWhere(intitule : typeDocStr)))
-					//typeDocTmp.addToLivresAssocies(livreTmp)
 				}catch(Exception e){
 					i++
 				}

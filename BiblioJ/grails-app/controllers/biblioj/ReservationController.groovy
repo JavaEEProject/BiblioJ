@@ -27,8 +27,8 @@ class ReservationController {
 	}
 
 	def create() {
-		Reservation reservationI = new Reservation(code: nextCodeReservation(), dateReservation: params?.dateReservation)
-		if(session['user'].size() > 0){
+		if(session['user'] != null && session['user']?.size() > 0){
+			Reservation reservationI = new Reservation(code: nextCodeReservation(), dateReservation: params?.dateReservation)
 			println session['user']
 			session['msgErreur'] = false
 			
@@ -42,10 +42,10 @@ class ReservationController {
 					session['msgErreur'] = true
 				}	
 			}
+			return [reservationInstance: reservationI]
+		}else{
+			redirect(action: "list", controller : "livre")
 		}
-
-		[reservationInstance: reservationI]
-			
 	}
 
 	def save() {
