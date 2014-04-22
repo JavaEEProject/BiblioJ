@@ -72,10 +72,10 @@
 				<tr>
 					<g:sortableColumn property="titre"
 						title="${message(code: 'livre.titre.label', default: 'Titre')}" />
-					<g:sortableColumn property="nombreExemplaires"
-						title="${message(code: 'livre.nombreExemplaires.label', default: 'Nombre Exemplaires')}" />
 					<g:sortableColumn property="nombreExemplairesDisponibles"
 						title="${message(code: 'livre.nombreExemplairesDisponibles.label', default: 'Nombre Exemplaires Disponibles')}" />
+					<g:sortableColumn property="mesAuteurs"
+						title="${message(code: 'livre.mesAuteurs.label', default: 'Auteur(s)')}" />
 					<th><g:message code="livre.typeDocument.label"
 							default="Type Document" /></th>
 					<th>Réservation</th>
@@ -89,14 +89,18 @@
 								${fieldValue(bean: livreInstance, field: "titre")}
 							</g:link></td>
 						<td>
-							${fieldValue(bean: livreInstance, field: "nombreExemplaires")}
-						</td>
-						<td>
 							${fieldValue(bean: livreInstance, field: "nombreExemplairesDisponibles")}
 						</td>
 						<td>
 							${fieldValue(bean: livreInstance, field: "typeDocument")}
 						</td>
+						<td><g:each in="${livreInstance.mesAuteurs}" var="l">
+								<span class="property-value" aria-labelledby="livresEcrit-label">
+									<g:link controller="auteur" action="show" id="${l.id}">
+										${l?.encodeAsHTML()}
+									</g:link>
+								</span>
+							</g:each></td>
 						<td><g:if
 								test="${session['user'].find { it.id == livreInstance.id }}">Déjà ajouté</g:if>
 							<g:else>
